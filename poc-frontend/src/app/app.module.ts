@@ -16,7 +16,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MastheadComponent } from './components/masthead/masthead.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
-import { TableComponent } from './components/table/table.component';
 
 
 @NgModule({
@@ -26,7 +25,6 @@ import { TableComponent } from './components/table/table.component';
     NavbarComponent,
     MastheadComponent,
     SearchBarComponent,
-    TableComponent
   ],
   imports: [
     BrowserModule,
