@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-masthead',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MastheadComponent implements OnInit {
 
-  constructor() { }
+  title: string;
+  subtitle: string;
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    if (this.router.url === '/home') {
+      this.title = "Client Register POC"
+      this.subtitle = "An Angular Project"
+    }
   }
 
 }
