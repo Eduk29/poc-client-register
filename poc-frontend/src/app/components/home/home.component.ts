@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 
 import { Person } from 'src/app/models/person.model';
 
-
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -30,21 +29,20 @@ const ELEMENT_DATA: PeriodicElement[] = [
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
   persons: any;
 
-  constructor(private personService: PersonService) { }
+  constructor(private personService: PersonService) {}
 
   ngOnInit() {
-    this.persons = this.personService.getPersons()
-    
-    this.persons.subscribe(data =>{
-      console.log(data)});
-  }
+    this.persons = this.personService.getPersons();
 
+    this.persons.subscribe((data) => {
+      console.log(data);
+    });
+  }
 }
