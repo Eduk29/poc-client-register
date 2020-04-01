@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { PersonService } from 'src/app/services/persons/person.service';
+import { Observable } from 'rxjs';
+
+import { Person } from 'src/app/models/person.model';
 
 export interface PeriodicElement {
   name: string;
@@ -6,6 +10,8 @@ export interface PeriodicElement {
   weight: number;
   symbol: string;
 }
+
+//const DATA: Person[] = [];
 
 const ELEMENT_DATA: PeriodicElement[] = [
   { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
@@ -28,8 +34,15 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class HomeComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
+  persons: any;
 
-  constructor() {}
+  constructor(private personService: PersonService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.persons = this.personService.getPersons();
+
+    this.persons.subscribe((data) => {
+      console.log(data);
+    });
+  }
 }
