@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PersonService } from 'src/app/services/persons/person.service';
 import { Observable } from 'rxjs';
 
-import { Person } from 'src/app/shared/models/person.model';
+import { Person } from 'src/app/models/person.model';
 
 
 export interface PeriodicElement {
@@ -12,7 +12,7 @@ export interface PeriodicElement {
   symbol: string;
 }
 
-const DATA: Person[] = [];
+//const DATA: Person[] = [];
 
 const ELEMENT_DATA: PeriodicElement[] = [
   { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 
-import { Person } from "src/app/shared/models/person.model"
+import { Person } from "src/app/models/person.model"
 import { Observable, of } from 'rxjs';
 
 
@@ -12,10 +12,11 @@ export class PersonService {
 
   constructor(private http: HttpClient) { }
 
-   getPersons(): Observable<Array<any>> {
-      return this.http.get("assets/db.json").subscribe(data =>{
-      return data
-    });
+  jsonURL = "https://my-json-server.typicode.com/Eduk29/poc-client-register/pessoa";
+
+
+   getPersons() {
+      return this.http.get(this.jsonURL);
   }
 
   // findPersons(): Observable<Person[]> {
