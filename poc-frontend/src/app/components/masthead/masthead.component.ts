@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,16 +8,16 @@ import { Router } from '@angular/router';
 })
 export class MastheadComponent implements OnInit {
 
-  title: string;
-  subtitle: string;
+  @Input() title: string;
+  @Input() subtitle: string;
 
   constructor(private router: Router) { }
 
   ngOnInit() {
-    if (this.router.url === '/home') {
-      this.title = "Client Register POC"
-      this.subtitle = "An Angular Project"
-    }
+    // if (this.router.url === '/home') {
+    //   this.title = "Client Register POC"
+    //   this.subtitle = "An Angular Project"
+    // }
   }
 
 }
