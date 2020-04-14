@@ -1,50 +1,70 @@
-import { Component, OnInit } from '@angular/core';
-import { PersonService } from 'src/app/services/persons/person.service';
-import { Observable } from 'rxjs';
+import { Component, OnInit } from "@angular/core";
+import { PersonService } from "src/app/services/persons/person.service";
+import { DataSource } from "@angular/cdk/collections";
+import { Observable } from "rxjs";
 
-import { Person } from 'src/app/models/person.model';
-
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
-//const DATA: Person[] = [];
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
-  { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
-  { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
-  { position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
-  { position: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
-  { position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' },
-  { position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N' },
-  { position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
-  { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
-  { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
-];
+import { Person } from "src/app/models/person.model";
+import { Contact } from 'src/app/models/contact.model';
+import { Document } from 'src/app/models/document.model';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent implements OnInit {
-
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  displayedColumns: string[] = [
+    "position",
+    "name",
+    "gender",
+    "contact",
+    "document"
+  ];
+  dataSource = new PersonDataSource(this.personService);
   persons: any;
+  contato: Array<Contact>;
+  documento: Array<Document>;
+  
 
-  constructor(private personService: PersonService) { }
-
-  ngOnInit() {
-    this.persons = this.personService.getPersons()
-    
-    this.persons.subscribe(data =>{
-      console.log(data)});
+  getContatoPrincipal(contato): String {
+    for (var i=0; i<=contato.length; i++) {
+      if (contato[i].isPrincipal){
+        return contato[i].valor;
+      }
+    }
   }
 
+  getDocumentoRG(documento): String {
+    
+    for (var i=0; i<=documento.length; i++) {
+      if (documento[i].documentos.tipoDocumento.valor === "RG"){
+        return documento[i].documentos.valorDocumento;
+      }
+    }
+
+  }
+
+  constructor(
+    private personService: PersonService
+  ) {}
+
+  ngOnInit() {
+    this.persons = this.personService.getPersons();
+
+    this.persons.subscribe(data => {
+      console.log(data);
+    });
+  }
+}
+
+export class PersonDataSource extends DataSource<any> {
+  constructor(
+    private personService: PersonService
+  ) {
+    super();
+  }
+  connect(): Observable<Person[]> {
+    return this.personService.getPersons();
+  }
+  disconnect() {}
 }
