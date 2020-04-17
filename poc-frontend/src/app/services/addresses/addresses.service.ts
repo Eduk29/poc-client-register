@@ -13,7 +13,7 @@ export class AddressService {
 
   constructor(private http: HttpClient) { }
 
-  apiAddresses = environment.APIEndpoint + "/endereco";
+  apiAddresses = environment.APIEndpoint + "/address";
 
 
    getAddresses(): Observable<Array<Address>> {

@@ -13,7 +13,7 @@ export class DocumentTypeService {
 
   constructor(private http: HttpClient) { }
 
-  apiDocumentTypes = environment.APIEndpoint + "/tipoDocumento";
+  apiDocumentTypes = environment.APIEndpoint + "/documentType";
 
 
    getDocuments(): Observable<Array<DocumentType>> {

@@ -13,7 +13,7 @@ export class ContactTypeService {
 
   constructor(private http: HttpClient) { }
 
-  apiContactTypes = environment.APIEndpoint + "/tipoContato";
+  apiContactTypes = environment.APIEndpoint + "/contactType";
 
 
    getDocuments(): Observable<Array<ContactType>> {

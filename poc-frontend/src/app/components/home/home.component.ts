@@ -14,35 +14,18 @@ import { Document } from 'src/app/models/document.model';
 })
 export class HomeComponent implements OnInit {
   displayedColumns: string[] = [
-    "position",
-    "name",
-    "gender",
-    "contact",
-    "document"
+    'position',
+    'name',
+    'gender',
+    'contact',
+    'document'
   ];
-  dataSource = new PersonDataSource(this.personService);
+  //dataSource = new PersonDataSource(this.personService);
+  dataSource = this.dataSource;
   persons: any;
-  contato: Array<Contact>;
-  documento: Array<Document>;
   
 
-  getContatoPrincipal(contato): String {
-    for (var i=0; i<=contato.length; i++) {
-      if (contato[i].isPrincipal){
-        return contato[i].valor;
-      }
-    }
-  }
-
-  getDocumentoRG(documento): String {
-    
-    for (var i=0; i<=documento.length; i++) {
-      if (documento[i].documentos.tipoDocumento.valor === "RG"){
-        return documento[i].documentos.valorDocumento;
-      }
-    }
-
-  }
+  
 
   constructor(
     private personService: PersonService
@@ -52,19 +35,53 @@ export class HomeComponent implements OnInit {
     this.persons = this.personService.getPersons();
 
     this.persons.subscribe(data => {
+      this.dataSource = data;
       console.log(data);
     });
   }
+
+  //não funciona
+  getContatoPrincipalNovo(contacts: Array<Contact>): string {
+    contacts = contacts.filter(contacts => contacts.isPrincipal === true);
+    console.log('Contatos: ', contacts);
+    return contacts.value;
+  }
+
+
+  checkIsPrincipal(contacts: Array<any>) {
+      var n: number
+      return contacts[n].isPrincipal === true;
+  }
+
+  //funciona
+  getContatoPrincipal(contacts: Array<any>): String {
+    for (var i=0; i<contacts.length; i++) {
+      if (contacts[i].isPrincipal){
+        return contacts[i].value;
+      }
+    }
+  }
+
+  getDocumentoRG(documents: Array<any>): String {
+    
+    for (var i=0; i<documents.length; i++) {
+      if (documents[i].documentType.value === 'RG')  {
+        return documents[i].documentValue;
+      }
+      return '-';
+    }
+
+  }
 }
 
-export class PersonDataSource extends DataSource<any> {
-  constructor(
-    private personService: PersonService
-  ) {
-    super();
-  }
-  connect(): Observable<Person[]> {
-    return this.personService.getPersons();
-  }
-  disconnect() {}
-}
+// export class PersonDataSource extends DataSource<any> {
+//   constructor(
+//     private personService: PersonService
+//   ) {
+//     super();
+//   }
+//   connect(): Observable<Person[]> {
+//     return this.personService.getPersons();
+//   }
+//   disconnect() {}
+// }

@@ -13,7 +13,7 @@ export class PersonService {
 
   constructor(private http: HttpClient) { }
 
-  apiPersons = environment.APIEndpoint + "/pessoa";
+  apiPersons = environment.APIEndpoint + "/person";
 
 
    getPersons(): Observable<Array<Person>> {
