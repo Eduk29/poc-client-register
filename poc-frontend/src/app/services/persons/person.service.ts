@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 
 import { Person } from "src/app/models/person.model"
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -12,11 +13,11 @@ export class PersonService {
 
   constructor(private http: HttpClient) { }
 
-  jsonURL = "https://my-json-server.typicode.com/Eduk29/poc-client-register/pessoa";
+  apiPersons = environment.APIEndpoint + "/pessoa";
 
 
-   getPersons() {
-      return this.http.get(this.jsonURL);
+   getPersons(): Observable<Array<Person>> {
+      return this.http.get<Array<Person>>(this.apiPersons);
   }
 
   // findPersons(): Observable<Person[]> {
