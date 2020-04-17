@@ -11,31 +11,31 @@
         <!-- Position Column -->
         <ng-container matColumnDef="position">
             <th mat-header-cell *matHeaderCellDef> No. </th>
-            <td mat-cell *matCellDef="let pessoa"> {{pessoa.id}} </td>
+            <td mat-cell *matCellDef="let person"> {{person.id}} </td>
         </ng-container>
 
         <!-- Name Column -->
         <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef> Name </th>
-            <td mat-cell *matCellDef="let pessoa"> {{pessoa.nome}} </td>
+            <td mat-cell *matCellDef="let person"> {{person.name}} </td>
         </ng-container>
 
         <!-- Gender Column -->
         <ng-container matColumnDef="gender">
             <th mat-header-cell *matHeaderCellDef> Gender </th>
-            <td mat-cell *matCellDef="let pessoa"> {{pessoa.genero}} </td>
+            <td mat-cell *matCellDef="let person"> {{person.gender}} </td>
         </ng-container>
 
         <!-- Contact Column -->
         <ng-container matColumnDef="contact">
             <th mat-header-cell *matHeaderCellDef> Contact </th>
-            <td mat-cell *matCellDef="let pessoa"> {{getContatoPrincipal(pessoa.contatos)}} </td>
+            <td mat-cell *matCellDef="let person"> {{getContatoPrincipalNovo(person.contacts)}} </td>
         </ng-container>
 
         <!-- Document Column -->
         <ng-container matColumnDef="document">
             <th mat-header-cell *matHeaderCellDef> Document </th>
-            <td mat-cell *matCellDef="let pessoa"> {{getDocumentoRG(pessoa.documentos)}} </td>
+            <td mat-cell *matCellDef="let person"> {{getDocumentoRG(person.documents)}} </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

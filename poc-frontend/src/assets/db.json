@@ -1,194 +1,194 @@
 {
-  "pessoa": [
+  "person": [
     {
       "id": 1,
-      "nome": "Jose Eduardo Trindade E Marques",
-      "genero": "Masculino",
-      "documentos": [
+      "name": "Jose Eduardo Trindade E Marques",
+      "gender": "Masculino",
+      "documents": [
         {
           "id": 1,
-          "valorDocumento": "99924577774",
-          "tipoDocumento": {
+          "documentValue": "99924577774",
+          "documentType": {
             "id": 2,
-            "chave": "CPF",
-            "valor": "CPF"
+            "key": "CPF",
+            "value": "CPF"
           }
         }
       ],
-      "enderecos": [
+      "address": [
         {
           "id": 1,
           "cep": "02080050",
-          "complemento": null,
-          "cidade": "Sao Paulo",
-          "estado": "SP",
-          "logradouro": "Rua Mascote Feliz",
-          "numero": "12"
+          "complement": null,
+          "city": "Sao Paulo",
+          "state": "SP",
+          "publicAddress": "Rua Mascote Feliz",
+          "number": "12"
         }
       ],
-      "contatos": [
+      "contacts": [
         {
           "id": 1,
-          "tipoContato": {
+          "contactType": {
             "id": 2,
-            "chave": "CELULAR",
-            "valor": "Celular"
+            "key": "CELULAR",
+            "value": "Celular"
           },
-          "valor": "1198563256",
+          "value": "1198563256",
           "isPrincipal": true
         },
         {
           "id": 2,
-          "tipoContato": {
+          "contactType": {
             "id": 1,
-            "chave": "TELEFONE",
-            "valor": "Telefone"
+            "key": "TELEFONE",
+            "value": "Telefone"
           },
-          "valor": "1122366944",
+          "value": "1122366944",
           "isPrincipal": false
         }
       ]
     },
     {
       "id": 2,
-      "nome": "André Pazzetti",
-      "genero": "Masculino",
-      "documentos": [
+      "name": "André Pazzetti",
+      "gender": "Masculino",
+      "documents": [
         {
           "id": 2,
-          "valorDocumento": "875698875",
-          "tipoDocumento": {
+          "documentValue": "875698875",
+          "documentType": {
             "id": 1,
-            "chave": "RG",
-            "valor": "RG"
+            "key": "RG",
+            "value": "RG"
           }
         },
         {
           "id": 3,
-          "valorDocumento": "42765998632",
-          "tipoDocumento": {
+          "documentValue": "42765998632",
+          "documentType": {
             "id": 2,
-            "chave": "CPF",
-            "valor": "CPF"
+            "key": "CPF",
+            "value": "CPF"
           }
         }
       ],
-      "enderecos": [
+      "address": [
         {
           "id": 2,
           "cep": "02569180",
-          "complemento": null,
-          "cidade": "Sao Paulo",
-          "estado": "SP",
-          "logradouro": "Rua Biritiba",
-          "numero": "2562"
+          "complement": null,
+          "city": "Sao Paulo",
+          "state": "SP",
+          "publicAddress": "Rua Biritiba",
+          "number": "2562"
         }
       ],
-      "contatos": [
+      "contacts": [
         {
           "id": 3,
-          "tipoContato": {
+          "contactType": {
             "id": 2,
-            "chave": "CELULAR",
-            "valor": "Celular"
+            "key": "CELULAR",
+            "value": "Celular"
           },
-          "valor": "11954782354",
+          "value": "11954782354",
           "isPrincipal": true
         }
       ]
     },
     {
       "id": 3,
-      "nome": "Marcelo Molina",
-      "genero": "Masculino",
-      "documentos": [
+      "name": "Marcelo Molina",
+      "gender": "Masculino",
+      "documents": [
         {
           "id": 4,
-          "valorDocumento": "325488836",
-          "tipoDocumento": {
+          "documentValue": "325488836",
+          "documentType": {
             "id": 1,
-            "chave": "RG",
-            "valor": "RG"
+            "key": "RG",
+            "value": "RG"
           }
         },
         {
           "id": 5,
-          "valorDocumento": "99988877766",
-          "tipoDocumento": {
+          "documentValue": "99988877766",
+          "documentType": {
             "id": 2,
-            "chave": "CPF",
-            "valor": "CPF"
+            "key": "CPF",
+            "value": "CPF"
           }
         }
       ],
-      "enderecos": [
+      "address": [
         {
           "id": 3,
           "cep": "13258540",
-          "complemento": null,
-          "cidade": "Sao Paulo",
-          "estado": "SP",
-          "logradouro": "Rua Luis Carlos Mejialos",
-          "numero": "149"
+          "complement": null,
+          "city": "Sao Paulo",
+          "state": "SP",
+          "publicAddress": "Rua Luis Carlos Mejialos",
+          "number": "149"
         }
       ],
-      "contatos": [
+      "contacts": [
         {
           "id": 4,
-          "tipoContato": {
+          "contactType": {
             "id": 2,
-            "chave": "CELULAR",
-            "valor": "Celular"
+            "key": "CELULAR",
+            "value": "Celular"
           },
-          "valor": "11956332569",
+          "value": "11956332569",
           "isPrincipal": true
         }
       ]
     }
   ],
-  "documento": [
+  "documents": [
     {
       "id": 1,
-      "valorDocumento": "99924577774",
-      "tipoDocumento": {
+      "documentValue": "99924577774",
+      "documentType": {
         "id": 2,
-        "chave": "CPF",
-        "valor": "CPF"
+        "key": "CPF",
+        "value": "CPF"
       },
-      "pessoa": {
+      "person": {
         "id": 1,
-        "nome": "Jose Eduardo Trindade E Marques",
-        "genero": "Masculino",
-        "enderecos": [
+        "name": "Jose Eduardo Trindade E Marques",
+        "gender": "Masculino",
+        "address": [
           {
             "id": 1,
             "cep": "02080050",
-            "complemento": null,
-            "cidade": "Sao Paulo",
-            "estado": "SP",
-            "logradouro": "Rua Mascote Feliz",
-            "numero": "12"
+            "complement": null,
+            "city": "Sao Paulo",
+            "state": "SP",
+            "publicAddress": "Rua Mascote Feliz",
+            "number": "12"
           }
         ],
-        "contatos": [
+        "contacts": [
           {
             "id": 1,
-            "tipoContato": {
+            "contactType": {
               "id": 2,
-              "chave": "CELULAR",
-              "valor": "Celular"
+              "key": "CELULAR",
+              "value": "Celular"
             },
-            "valor": "11979830357",
+            "value": "11979830357",
             "isPrincipal": true
           },
           {
             "id": 2,
-            "tipoContato": {
+            "contactType": {
               "id": 1,
-              "chave": "TELEFONE",
-              "valor": "Telefone"
+              "key": "TELEFONE",
+              "value": "Telefone"
             },
-            "valor": "1122366944",
+            "value": "1122366944",
             "isPrincipal": false
           }
         ]
@@ -196,36 +196,36 @@
     },
     {
       "id": 2,
-      "valorDocumento": "875698875",
-      "tipoDocumento": {
+      "documentValue": "875698875",
+      "documentType": {
         "id": 1,
-        "chave": "RG",
-        "valor": "RG"
+        "key": "RG",
+        "value": "RG"
       },
-      "pessoa": {
+      "person": {
         "id": 2,
-        "nome": "André Pazzeti",
-        "genero": "Masculino",
-        "enderecos": [
+        "name": "André Pazzeti",
+        "gender": "Masculino",
+        "address": [
           {
             "id": 2,
             "cep": "02569180",
-            "complemento": null,
-            "cidade": "Sao Paulo",
-            "estado": "SP",
-            "logradouro": "Rua Biritiba",
-            "numero": "2562"
+            "complement": null,
+            "city": "Sao Paulo",
+            "state": "SP",
+            "publicAddress": "Rua Biritiba",
+            "number": "2562"
           }
         ],
-        "contatos": [
+        "contacts": [
           {
             "id": 3,
-            "tipoContato": {
+            "contactType": {
               "id": 2,
-              "chave": "CELULAR",
-              "valor": "Celular"
+              "key": "CELULAR",
+              "value": "Celular"
             },
-            "valor": "11954782354",
+            "value": "11954782354",
             "isPrincipal": true
           }
         ]
@@ -233,36 +233,36 @@
     },
     {
       "id": 3,
-      "valorDocumento": "42765998632",
-      "tipoDocumento": {
+      "documentValue": "42765998632",
+      "documentType": {
         "id": 2,
-        "chave": "CPF",
-        "valor": "CPF"
+        "key": "CPF",
+        "value": "CPF"
       },
-      "pessoa": {
+      "person": {
         "id": 2,
-        "nome": "André Pazzetti",
-        "genero": "Masculino",
-        "enderecos": [
+        "name": "André Pazzetti",
+        "gender": "Masculino",
+        "address": [
           {
             "id": 2,
             "cep": "02569180",
-            "complemento": null,
-            "cidade": "Sao Paulo",
-            "estado": "SP",
-            "logradouro": "Rua Biritiba",
-            "numero": "2562"
+            "complement": null,
+            "city": "Sao Paulo",
+            "state": "SP",
+            "publicAddress": "Rua Biritiba",
+            "number": "2562"
           }
         ],
-        "contatos": [
+        "contacts": [
           {
             "id": 3,
-            "tipoContato": {
+            "contactType": {
               "id": 2,
-              "chave": "CELULAR",
-              "valor": "Celular"
+              "key": "CELULAR",
+              "value": "Celular"
             },
-            "valor": "11954782354",
+            "value": "11954782354",
             "isPrincipal": true
           }
         ]
@@ -270,36 +270,36 @@
     },
     {
       "id": 4,
-      "valorDocumento": "325488836",
-      "tipoDocumento": {
+      "documentValue": "325488836",
+      "documentType": {
         "id": 1,
-        "chave": "RG",
-        "valor": "RG"
+        "key": "RG",
+        "value": "RG"
       },
-      "pessoa": {
+      "person": {
         "id": 3,
-        "nome": "Marcelo Molina",
-        "genero": "Masculino",
-        "enderecos": [
+        "name": "Marcelo Molina",
+        "gender": "Masculino",
+        "address": [
           {
             "id": 3,
             "cep": "13258540",
-            "complemento": null,
-            "cidade": "Sao Paulo",
-            "estado": "SP",
-            "logradouro": "Rua Luis Carlos Mejialos",
-            "numero": "149"
+            "complement": null,
+            "city": "Sao Paulo",
+            "state": "SP",
+            "publicAddress": "Rua Luis Carlos Mejialos",
+            "number": "149"
           }
         ],
-        "contatos": [
+        "contacts": [
           {
             "id": 4,
-            "tipoContato": {
+            "contactType": {
               "id": 2,
-              "chave": "CELULAR",
-              "valor": "Celular"
+              "key": "CELULAR",
+              "value": "Celular"
             },
-            "valor": "11956332569",
+            "value": "11956332569",
             "isPrincipal": true
           }
         ]
@@ -307,384 +307,384 @@
     },
     {
       "id": 5,
-      "valorDocumento": "99988877766",
-      "tipoDocumento": {
+      "documentValue": "99988877766",
+      "documentType": {
         "id": 2,
-        "chave": "CPF",
-        "valor": "CPF"
+        "key": "CPF",
+        "value": "CPF"
       },
-      "pessoa": {
+      "person": {
         "id": 3,
-        "nome": "Marcelo Molina",
-        "genero": "Masculino",
-        "enderecos": [
+        "name": "Marcelo Molina",
+        "gender": "Masculino",
+        "address": [
           {
             "id": 3,
             "cep": "13258540",
-            "complemento": null,
-            "cidade": "Sao Paulo",
-            "estado": "SP",
-            "logradouro": "Rua Luis Carlos Mejialos",
-            "numero": "149"
+            "complement": null,
+            "city": "Sao Paulo",
+            "state": "SP",
+            "publicAddress": "Rua Luis Carlos Mejialos",
+            "number": "149"
           }
         ],
-        "contatos": [
+        "contacts": [
           {
             "id": 4,
-            "tipoContato": {
+            "contactType": {
               "id": 2,
-              "chave": "CELULAR",
-              "valor": "Celular"
+              "key": "CELULAR",
+              "value": "Celular"
             },
-            "valor": "11956332569",
+            "value": "11956332569",
             "isPrincipal": true
           }
         ]
       }
     }
   ],
-  "endereco": [
+  "address": [
     {
       "id": 1,
-      "pessoa": [
+      "person": [
         {
           "id": 1,
-          "nome": "Jose Eduardo Trindade E Marques",
-          "genero": "Masculino",
-          "documentos": [
+          "name": "Jose Eduardo Trindade E Marques",
+          "gender": "Masculino",
+          "documents": [
             {
               "id": 1,
-              "valorDocumento": "99924577774",
-              "tipoDocumento": {
+              "documentValue": "99924577774",
+              "documentType": {
                 "id": 2,
-                "chave": "CPF",
-                "valor": "CPF"
+                "key": "CPF",
+                "value": "CPF"
               }
             }
           ],
-          "contatos": [
+          "contacts": [
             {
               "id": 1,
-              "tipoContato": {
+              "contactType": {
                 "id": 2,
-                "chave": "CELULAR",
-                "valor": "Celular"
+                "key": "CELULAR",
+                "value": "Celular"
               },
-              "valor": "11979830357",
+              "value": "11979830357",
               "isPrincipal": true
             },
             {
               "id": 2,
-              "tipoContato": {
+              "contactType": {
                 "id": 1,
-                "chave": "TELEFONE",
-                "valor": "Telefone"
+                "key": "TELEFONE",
+                "value": "Telefone"
               },
-              "valor": "1122366944",
+              "value": "1122366944",
               "isPrincipal": false
             }
           ]
         }
       ],
       "cep": "02080050",
-      "complemento": null,
-      "cidade": "Sao Paulo",
-      "estado": "SP",
-      "logradouro": "Rua Mascote Feliz",
-      "numero": "12"
+      "complement": null,
+      "city": "Sao Paulo",
+      "state": "SP",
+      "publicAddress": "Rua Mascote Feliz",
+      "number": "12"
     },
     {
       "id": 2,
-      "pessoa": [
+      "person": [
         {
           "id": 2,
-          "nome": "André Pazzetti",
-          "genero": "Masculino",
-          "documentos": [
+          "name": "André Pazzetti",
+          "gender": "Masculino",
+          "documents": [
             {
               "id": 2,
-              "valorDocumento": "875698875",
-              "tipoDocumento": {
+              "documentValue": "875698875",
+              "documentType": {
                 "id": 1,
-                "chave": "RG",
-                "valor": "RG"
+                "key": "RG",
+                "value": "RG"
               }
             },
             {
               "id": 3,
-              "valorDocumento": "42765998632",
-              "tipoDocumento": {
+              "documentValue": "42765998632",
+              "documentType": {
                 "id": 2,
-                "chave": "CPF",
-                "valor": "CPF"
+                "key": "CPF",
+                "value": "CPF"
               }
             }
           ],
-          "contatos": [
+          "contacts": [
             {
               "id": 3,
-              "tipoContato": {
+              "contactType": {
                 "id": 2,
-                "chave": "CELULAR",
-                "valor": "Celular"
+                "key": "CELULAR",
+                "value": "Celular"
               },
-              "valor": "11954782354",
+              "value": "11954782354",
               "isPrincipal": true
             }
           ]
         }
       ],
       "cep": "02569180",
-      "complemento": null,
-      "cidade": "Sao Paulo",
-      "estado": "SP",
-      "logradouro": "Rua Biritiba",
-      "numero": "2562"
+      "complement": null,
+      "city": "Sao Paulo",
+      "state": "SP",
+      "publicAddress": "Rua Biritiba",
+      "number": "2562"
     },
     {
       "id": 3,
-      "pessoa": [
+      "person": [
         {
           "id": 3,
-          "nome": "Marcelo Molina",
-          "genero": "Masculino",
-          "documentos": [
+          "name": "Marcelo Molina",
+          "gender": "Masculino",
+          "documents": [
             {
               "id": 4,
-              "valorDocumento": "325488836",
-              "tipoDocumento": {
+              "documentValue": "325488836",
+              "documentType": {
                 "id": 1,
-                "chave": "RG",
-                "valor": "RG"
+                "key": "RG",
+                "value": "RG"
               }
             },
             {
               "id": 5,
-              "valorDocumento": "99988877766",
-              "tipoDocumento": {
+              "documentValue": "99988877766",
+              "documentType": {
                 "id": 2,
-                "chave": "CPF",
-                "valor": "CPF"
+                "key": "CPF",
+                "value": "CPF"
               }
             }
           ],
-          "contatos": [
+          "contacts": [
             {
               "id": 4,
-              "tipoContato": {
+              "contactType": {
                 "id": 2,
-                "chave": "CELULAR",
-                "valor": "Celular"
+                "key": "CELULAR",
+                "value": "Celular"
               },
-              "valor": "11956332569",
+              "value": "11956332569",
               "isPrincipal": true
             }
           ]
         }
       ],
       "cep": "13258540",
-      "complemento": null,
-      "cidade": "Sao Paulo",
-      "estado": "SP",
-      "logradouro": "Rua Luis Carlos Mejialos",
-      "numero": "149"
+      "complement": null,
+      "city": "Sao Paulo",
+      "state": "SP",
+      "publicAddress": "Rua Luis Carlos Mejialos",
+      "number": "149"
     }
   ],
-  "contato": [
+  "contact": [
     {
       "id": 1,
-      "pessoa": {
+      "person": {
         "id": 1,
-        "nome": "Jose Eduardo Trindade E Marques",
-        "genero": "Masculino",
-        "documentos": [
+        "name": "Jose Eduardo Trindade E Marques",
+        "gender": "Masculino",
+        "documents": [
           {
             "id": 1,
-            "valorDocumento": "99924577774",
-            "tipoDocumento": {
+            "documentValue": "99924577774",
+            "documentType": {
               "id": 2,
-              "chave": "CPF",
-              "valor": "CPF"
+              "key": "CPF",
+              "value": "CPF"
             }
           }
         ],
-        "enderecos": [
+        "address": [
           {
             "id": 1,
             "cep": "02080050",
-            "complemento": null,
-            "cidade": "Sao Paulo",
-            "estado": "SP",
-            "logradouro": "Rua Mascote Feliz",
-            "numero": "12"
+            "complement": null,
+            "city": "Sao Paulo",
+            "state": "SP",
+            "publicAddress": "Rua Mascote Feliz",
+            "number": "12"
           }
         ]
       },
-      "tipoContato": {
+      "contactType": {
         "id": 2,
-        "chave": "CELULAR",
-        "valor": "Celular"
+        "key": "CELULAR",
+        "value": "Celular"
       },
-      "valor": "11979830357",
+      "value": "11979830357",
       "isPrincipal": true
     },
     {
       "id": 2,
-      "pessoa": {
+      "person": {
         "id": 1,
-        "nome": "Jose Eduardo Trindade E Marques",
-        "genero": "Masculino",
-        "documentos": [
+        "name": "Jose Eduardo Trindade E Marques",
+        "gender": "Masculino",
+        "documents": [
           {
             "id": 1,
-            "valorDocumento": "99924577774",
-            "tipoDocumento": {
+            "documentValue": "99924577774",
+            "documentType": {
               "id": 2,
-              "chave": "CPF",
-              "valor": "CPF"
+              "key": "CPF",
+              "value": "CPF"
             }
           }
         ],
-        "enderecos": [
+        "address": [
           {
             "id": 1,
             "cep": "02080050",
-            "complemento": null,
-            "cidade": "Sao Paulo",
-            "estado": "SP",
-            "logradouro": "Rua Mascote Feliz",
-            "numero": "12"
+            "complement": null,
+            "city": "Sao Paulo",
+            "state": "SP",
+            "publicAddress": "Rua Mascote Feliz",
+            "number": "12"
           }
         ]
       },
-      "tipoContato": {
+      "contactType": {
         "id": 1,
-        "chave": "TELEFONE",
-        "valor": "Telefone"
+        "key": "TELEFONE",
+        "value": "Telefone"
       },
-      "valor": "1122366944",
+      "value": "1122366944",
       "isPrincipal": false
     },
     {
       "id": 3,
-      "pessoa": {
+      "person": {
         "id": 2,
-        "nome": "André Pazzetti",
-        "genero": "Masculino",
-        "documentos": [
+        "name": "André Pazzetti",
+        "gender": "Masculino",
+        "documents": [
           {
             "id": 2,
-            "valorDocumento": "875698875",
-            "tipoDocumento": {
+            "documentValue": "875698875",
+            "documentType": {
               "id": 1,
-              "chave": "RG",
-              "valor": "RG"
+              "key": "RG",
+              "value": "RG"
             }
           },
           {
             "id": 3,
-            "valorDocumento": "42765998632",
-            "tipoDocumento": {
+            "documentValue": "42765998632",
+            "documentType": {
               "id": 2,
-              "chave": "CPF",
-              "valor": "CPF"
+              "key": "CPF",
+              "value": "CPF"
             }
           }
         ],
-        "enderecos": [
+        "address": [
           {
             "id": 2,
             "cep": "02569180",
-            "complemento": null,
-            "cidade": "Sao Paulo",
-            "estado": "SP",
-            "logradouro": "Rua Biritiba",
-            "numero": "2562"
+            "complement": null,
+            "city": "Sao Paulo",
+            "state": "SP",
+            "publicAddress": "Rua Biritiba",
+            "number": "2562"
           }
         ]
       },
-      "tipoContato": {
+      "contactType": {
         "id": 2,
-        "chave": "CELULAR",
-        "valor": "Celular"
+        "key": "CELULAR",
+        "value": "Celular"
       },
-      "valor": "11954782354",
+      "value": "11954782354",
       "isPrincipal": true
     },
     {
       "id": 4,
-      "pessoa": {
+      "person": {
         "id": 3,
-        "nome": "Marcelo Molina",
-        "genero": "Masculino",
-        "documentos": [
+        "name": "Marcelo Molina",
+        "gender": "Masculino",
+        "documents": [
           {
             "id": 4,
-            "valorDocumento": "325488836",
-            "tipoDocumento": {
+            "documentValue": "325488836",
+            "documentType": {
               "id": 1,
-              "chave": "RG",
-              "valor": "RG"
+              "key": "RG",
+              "value": "RG"
             }
           },
           {
             "id": 5,
-            "valorDocumento": "99988877766",
-            "tipoDocumento": {
+            "documentValue": "99988877766",
+            "documentType": {
               "id": 2,
-              "chave": "CPF",
-              "valor": "CPF"
+              "key": "CPF",
+              "value": "CPF"
             }
           }
         ],
-        "enderecos": [
+        "address": [
           {
             "id": 3,
             "cep": "13258540",
-            "complemento": null,
-            "cidade": "Sao Paulo",
-            "estado": "SP",
-            "logradouro": "Rua Luis Carlos Mejialos",
-            "numero": "149"
+            "complement": null,
+            "city": "Sao Paulo",
+            "state": "SP",
+            "publicAddress": "Rua Luis Carlos Mejialos",
+            "number": "149"
           }
         ]
       },
-      "tipoContato": {
+      "contactType": {
         "id": 2,
-        "chave": "CELULAR",
-        "valor": "Celular"
+        "key": "CELULAR",
+        "value": "Celular"
       },
-      "valor": "11956332569",
+      "value": "11956332569",
       "isPrincipal": true
     }
   ],
-  "tipoDocumento": [
+  "documentType": [
     {
       "id": 1,
-      "chave": "RG",
-      "valor": "RG"
+      "key": "RG",
+      "value": "RG"
     },
     {
       "id": 2,
-      "chave": "CPF",
-      "valor": "CPF"
+      "key": "CPF",
+      "value": "CPF"
     }
   ],
-  "tipoContato": [
+  "contactType": [
     {
       "id": 1,
-      "chave": "TELEFONE",
-      "valor": "Telefone"
+      "key": "TELEFONE",
+      "value": "Telefone"
     },
     {
       "id": 2,
-      "chave": "CELULAR",
-      "valor": "Celular"
+      "key": "CELULAR",
+      "value": "Celular"
     },
     {
       "id": 3,
-      "chave": "EMAIL",
-      "valor": "Email"
+      "key": "EMAIL",
+      "value": "Email"
     }
   ]
 }

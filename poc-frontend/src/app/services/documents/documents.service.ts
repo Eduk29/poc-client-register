@@ -13,7 +13,7 @@ export class DocumentService {
 
   constructor(private http: HttpClient) { }
 
-  apiDocuments = environment.APIEndpoint + "/documento";
+  apiDocuments = environment.APIEndpoint + "/documents";
 
 
    getDocuments(): Observable<Array<Document>> {
