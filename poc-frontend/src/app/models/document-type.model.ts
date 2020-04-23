@@ -1,6 +1,6 @@
 export interface DocumentType {
-    key: Number
-    documents: Document,
-    id: Number,
-    value: String
+    key: string
+    documents: Array<Document>,
+    id: number,
+    value: string
 }

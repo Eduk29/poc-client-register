@@ -1,7 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { PersonService } from "src/app/services/persons/person.service";
-import { DataSource } from "@angular/cdk/collections";
-import { Observable } from "rxjs";
 
 import { Person } from "src/app/models/person.model";
 import { Contact } from "src/app/models/contact.model";
@@ -62,6 +60,13 @@ export class HomeComponent implements OnInit {
   //    } return '-'
   // }
 
+  getDocumentoRGNovo(documents: Array<any>): string {
+    const newDocuments = documents
+      .filter((document: Document) => document.documentValue === 'RG')
+      .shift();
+    console.log("Documentos: ",newDocuments)
+    return !!newDocuments ? newDocuments.documentValue : '-';
+  }
 
   //funciona
   getDocumentoRG(documents: Array<any>): string {

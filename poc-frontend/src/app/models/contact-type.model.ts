@@ -1,8 +1,8 @@
 import { Contact } from "./contact.model";
 
 export interface ContactType {
-    key: Number,
+    key: string,
     contacts: Contact,
-    id: Number,
-    value: String
+    id: number,
+    value: string
 }
