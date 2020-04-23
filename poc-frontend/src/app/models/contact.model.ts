@@ -1,7 +1,7 @@
 export interface Contact {
-    id: Number,
-    idPerson: Number,
-    idContactType: Number,
-    isPrincipal: Boolean,
-    value: String
+    id: number;
+    idPerson: number;
+    idContactType: number;
+    isPrincipal: boolean;
+    value: string;
 }
