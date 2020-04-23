@@ -19,7 +19,7 @@ TBD
 
 ## Developers :computer:
 
-André Cavalcanti de Arruda Pazzetti
+André Cavalcanti de Arruda Pazzetti  
 andrepazzetti@gmail.com
 
 José Eduardo Trindade E Marques  
