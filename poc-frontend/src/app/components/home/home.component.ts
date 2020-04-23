@@ -4,8 +4,8 @@ import { DataSource } from "@angular/cdk/collections";
 import { Observable } from "rxjs";
 
 import { Person } from "src/app/models/person.model";
-import { Contact } from 'src/app/models/contact.model';
-import { Document } from 'src/app/models/document.model';
+import { Contact } from "src/app/models/contact.model";
+import { Document } from "src/app/models/document.model";
 
 @Component({
   selector: "app-home",
@@ -14,22 +14,17 @@ import { Document } from 'src/app/models/document.model';
 })
 export class HomeComponent implements OnInit {
   displayedColumns: string[] = [
-    'position',
-    'name',
-    'gender',
-    'contact',
-    'document'
+    "position",
+    "name",
+    "gender",
+    "contact",
+    "document"
   ];
   //dataSource = new PersonDataSource(this.personService);
   dataSource = this.dataSource;
   persons: any;
-  
 
-  
-
-  constructor(
-    private personService: PersonService
-  ) {}
+  constructor(private personService: PersonService) {}
 
   ngOnInit() {
     this.persons = this.personService.getPersons();
@@ -40,48 +35,46 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  //não funciona
   getContatoPrincipalNovo(contacts: Array<Contact>): string {
-    contacts = contacts.filter(contacts => contacts.isPrincipal === true);
-    console.log('Contatos: ', contacts);
-    return contacts.value;
-  }
-
-
-  checkIsPrincipal(contacts: Array<any>) {
-      var n: number
-      return contacts[n].isPrincipal === true;
+    let newContacts = contacts.filter(contact => contact.isPrincipal === true);
+    console.log("Contatos: ", newContacts);
+    return newContacts[0].value;
   }
 
   //funciona
-  getContatoPrincipal(contacts: Array<any>): String {
-    for (var i=0; i<contacts.length; i++) {
-      if (contacts[i].isPrincipal){
-        return contacts[i].value;
-      }
-    }
-  }
+  // getContatoPrincipal(contacts: Array<any>): String {
+  //   for (var i=0; i<contacts.length; i++) {
+  //     if (contacts[i].isPrincipal){
+  //       return contacts[i].value;
+  //     }
+  //   }
+  // }
 
-  getDocumentoRG(documents: Array<any>): String {
-    
+
+  //não funciona
+  // getDocumentoRGNovo(documents: Array<any>) {
+  //   let newDocuments = documents.filter(
+  //     document => document.documentType.value === "RG"
+  //   );
+  //   console.log("Documentos: ", newDocuments);
+  //    if (!newDocuments[0] == undefined) {
+  //      return newDocuments[0].documentValue;
+  //    } return '-'
+  // }
+
+
+  //funciona
+  getDocumentoRG(documents: Array<any>): string {
+
     for (var i=0; i<documents.length; i++) {
       if (documents[i].documentType.value === 'RG')  {
         return documents[i].documentValue;
       }
       return '-';
     }
-
-  }
+   }
 }
+   
+   
 
-// export class PersonDataSource extends DataSource<any> {
-//   constructor(
-//     private personService: PersonService
-//   ) {
-//     super();
-//   }
-//   connect(): Observable<Person[]> {
-//     return this.personService.getPersons();
-//   }
-//   disconnect() {}
-// }
+
