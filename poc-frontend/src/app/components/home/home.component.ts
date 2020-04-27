@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
   }
 
   getNewMainContact(contacts: Array<Contact>): string {
-    let newContacts = contacts.filter(contact => contact.isPrincipal === true);
+    const newContacts = contacts.filter(contact => contact.isPrincipal === true);
     return newContacts[0].value;
   }
 
