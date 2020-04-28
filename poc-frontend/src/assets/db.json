@@ -228,7 +228,8 @@
           "number": "98"
         }
       ],
-      "contacts": [{
+      "contacts": [
+        {
           "id": 6,
           "contactType": {
             "id": 2,
@@ -237,7 +238,8 @@
           },
           "value": "11955553369",
           "isPrincipal": true
-        }]
+        }
+      ]
     },
     {
       "id": 6,
@@ -263,15 +265,17 @@
           }
         }
       ],
-      "address": [{
-        "id": 6,
-        "cep": "14266641",
-        "complement": null,
-        "city": "Sao Paulo",
-        "state": "SP",
-        "publicAddress": "Rua Cinza",
-        "number": "138"
-      }],
+      "address": [
+        {
+          "id": 6,
+          "cep": "14266641",
+          "complement": null,
+          "city": "Sao Paulo",
+          "state": "SP",
+          "publicAddress": "Rua Cinza",
+          "number": "138"
+        }
+      ],
       "contacts": [
         {
           "id": 7,
@@ -368,16 +372,18 @@
           "number": "98"
         }
       ],
-      "contacts": [{
-        "id": 9,
-        "contactType": {
-          "id": 2,
-          "key": "CELULAR",
-          "value": "Celular"
-        },
-        "value": "11996969669",
-        "isPrincipal": true
-      }]
+      "contacts": [
+        {
+          "id": 9,
+          "contactType": {
+            "id": 2,
+            "key": "CELULAR",
+            "value": "Celular"
+          },
+          "value": "11996969669",
+          "isPrincipal": true
+        }
+      ]
     },
     {
       "id": 9,
@@ -863,6 +869,26 @@
           }
         ]
       }
+    },
+    {
+      "id": 6,
+      "valorDocumento": "32998765711",
+      "tipoDocumento": {
+        "id": 2,
+        "chave": "CPF",
+        "valor": "CPF"
+      },
+      "pessoa": {}
+    },
+    {
+      "id": 7,
+      "valorDocumento": "212312981",
+      "tipoDocumento": {
+        "id": 1,
+        "chave": "RG",
+        "valor": "RG"
+      },
+      "pessoa": {}
     }
   ],
   "address": [
