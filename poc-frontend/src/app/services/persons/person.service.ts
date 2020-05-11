@@ -16,26 +16,14 @@ export class PersonService {
   apiPersons = environment.APIEndpoint + "/person";
 
 
-   getPersons(): Observable<Array<Person>> {
-      return this.http.get<Array<Person>>(this.apiPersons);
+   getPersons(pageSize: number, pageIndex: number): Observable<Array<Person>> {
+      const url = `${this.apiPersons}?_page=${pageIndex}&_limit=${pageSize}`
+      return this.http.get<Array<Person>>(url);
   }
 
-  // findPersons(): Observable<Person[]> {
-  //   return of(this.tenPersons());
-  // }
-
-  // tenPersons(): Person[] {
-  //   return this.mockPersons(10);
-  // }
-
-  // mockPersons(amount: number): Person[] {
-  //   this.getPersons();
-  //   let persons = this.data;
-  //   for (let i = 0; i < amount; i++) {
-  //     persons.push();
-  //   }
-  //   return persons;
-  // }
+  getPersonsRaw(): Observable<Array<Person>> {
+    return this.http.get<Array<Person>>(this.apiPersons);
+  }
 }
 
 
