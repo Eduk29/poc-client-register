@@ -1,40 +1,40 @@
 <app-navbar></app-navbar>
 <app-masthead title = "Client Register POC" subtitle = "An Angular Project"></app-masthead>
-<app-search-bar></app-search-bar>
-<div class="d-flex justify-content-center" id ="persons-table">
+<app-search-bar [dataSource]="dataSource" [table]="table" [inputValue]="inputValue"  (searchExecute)="searchPersonByFilter($event)"></app-search-bar>
+<div class="d-flex justify-content-center" id="persons-table">
 
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort #table="matTable" class="mat-elevation-z8">
 
         <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
 
         <!-- Position Column -->
-        <ng-container matColumnDef="position">
-            <th mat-header-cell *matHeaderCellDef> No. </th>
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
             <td mat-cell *matCellDef="let person"> {{person.id}} </td>
         </ng-container>
 
         <!-- Name Column -->
         <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
             <td mat-cell *matCellDef="let person"> {{person.name}} </td>
         </ng-container>
 
         <!-- Gender Column -->
         <ng-container matColumnDef="gender">
-            <th mat-header-cell *matHeaderCellDef> Gender </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Gender </th>
             <td mat-cell *matCellDef="let person"> {{person.gender}} </td>
-        </ng-container>
+        </ng-container> 
 
         <!-- Contact Column -->
-        <ng-container matColumnDef="contact">
-            <th mat-header-cell *matHeaderCellDef> Contact </th>
+        <ng-container matColumnDef="contacts">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Contact </th>
             <td mat-cell *matCellDef="let person"> {{getNewMainContact(person.contacts)}} </td>
         </ng-container>
 
         <!-- Document Column -->
-        <ng-container matColumnDef="document">
-            <th mat-header-cell *matHeaderCellDef> Document </th>
+        <ng-container matColumnDef="documents">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Document </th>
             <td mat-cell *matCellDef="let person"> {{getNewRGDocument(person.documents)}} </td>
         </ng-container>
 
