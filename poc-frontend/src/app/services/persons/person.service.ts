@@ -1,7 +1,8 @@
+import { Filter } from './../../models/filter.model';
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient } from '@angular/common/http';
 
-import { Person } from "src/app/models/person.model"
+import { Person } from 'src/app/models/person.model';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
@@ -13,29 +14,31 @@ export class PersonService {
 
   constructor(private http: HttpClient) { }
 
-  apiPersons = environment.APIEndpoint + "/person";
+  apiPersons = environment.APIEndpoint + '/person';
 
-
-   getPersons(): Observable<Array<Person>> {
-      return this.http.get<Array<Person>>(this.apiPersons);
+  getTotalElements(): Observable<Array<Person>> {
+    return this.http
+      .get<Array<Person>>(this.apiPersons);
   }
 
-  // findPersons(): Observable<Person[]> {
-  //   return of(this.tenPersons());
-  // }
+  getPersons(pageIndex: number, pageSize: number): Observable<Array<Person>> {
+    const url = `${this.apiPersons}?_page=${pageIndex}&_limit=${pageSize}`;
+    return this.http.get<Array<Person>>(url);
+  }
 
-  // tenPersons(): Person[] {
-  //   return this.mockPersons(10);
-  // }
+  findPersonsByFilter(pageIndex: number, pageSize: number, filter: Filter): Observable<Array<Person>> {
+    let url: string;
 
-  // mockPersons(amount: number): Person[] {
-  //   this.getPersons();
-  //   let persons = this.data;
-  //   for (let i = 0; i < amount; i++) {
-  //     persons.push();
-  //   }
-  //   return persons;
-  // }
+    if (filter.filterBy === 'name') {
+      url = `${this.apiPersons}?_page=${pageIndex}&_limit=${pageSize}&${filter.filterBy}_like=${filter.valueInput}`;
+    }
+
+    if (filter.filterBy === 'gender') {
+      url = `${this.apiPersons}?_page=${pageIndex}&_limit=${pageSize}&${filter.filterBy}=${filter.genderInput}`;
+    }
+
+    return this.http.get<Array<Person>>(url);
+  }
 }
 
 

@@ -1,49 +1,47 @@
 <app-navbar></app-navbar>
-<app-masthead title = "Client Register POC" subtitle = "An Angular Project"></app-masthead>
-<app-search-bar></app-search-bar>
-<div class="d-flex justify-content-center" id ="persons-table">
+<app-masthead title="Client Register POC" subtitle="An Angular Project"></app-masthead>
+<app-search-bar [filter]="filter" (searchEvent)="onSearch($event)"></app-search-bar>
+<div class="d-flex justify-content-center" id="persons-table">
 
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-        <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let person"> {{person.id}} </td>
+    </ng-container>
 
-        <!-- Position Column -->
-        <ng-container matColumnDef="position">
-            <th mat-header-cell *matHeaderCellDef> No. </th>
-            <td mat-cell *matCellDef="let person"> {{person.id}} </td>
-        </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let person"> {{person.name}} </td>
+    </ng-container>
 
-        <!-- Name Column -->
-        <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef> Name </th>
-            <td mat-cell *matCellDef="let person"> {{person.name}} </td>
-        </ng-container>
+    <!-- Gender Column -->
+    <ng-container matColumnDef="gender">
+      <th mat-header-cell *matHeaderCellDef> Gender </th>
+      <td mat-cell *matCellDef="let person"> {{person.gender}} </td>
+    </ng-container>
 
-        <!-- Gender Column -->
-        <ng-container matColumnDef="gender">
-            <th mat-header-cell *matHeaderCellDef> Gender </th>
-            <td mat-cell *matCellDef="let person"> {{person.gender}} </td>
-        </ng-container>
+    <!-- Contact Column -->
+    <ng-container matColumnDef="contact">
+      <th mat-header-cell *matHeaderCellDef> Contact </th>
+      <td mat-cell *matCellDef="let person"> {{displayMainContact(person)}} </td>
+    </ng-container>
 
-        <!-- Contact Column -->
-        <ng-container matColumnDef="contact">
-            <th mat-header-cell *matHeaderCellDef> Contact </th>
-            <td mat-cell *matCellDef="let person"> {{getNewMainContact(person.contacts)}} </td>
-        </ng-container>
+    <!-- Document Column -->
+    <ng-container matColumnDef="document">
+      <th mat-header-cell *matHeaderCellDef> Document </th>
+      <td mat-cell *matCellDef="let person"> {{displayDocumentRG(person)}} </td>
+    </ng-container>
 
-        <!-- Document Column -->
-        <ng-container matColumnDef="document">
-            <th mat-header-cell *matHeaderCellDef> Document </th>
-            <td mat-cell *matCellDef="let person"> {{getNewRGDocument(person.documents)}} </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
 
 </div>
-<div>
-    <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
-    </mat-paginator>
+<div *ngIf="!!length">
+  <mat-paginator [length]="length" [pageIndex]="pageIndex" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+    [showFirstLastButtons]="true" (page)="getPage($event)">
+  </mat-paginator>
 </div>

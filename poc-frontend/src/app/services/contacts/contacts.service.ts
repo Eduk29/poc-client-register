@@ -1,3 +1,5 @@
+import { Person } from './../../models/person.model';
+import { Filter } from './../../models/filter.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 
@@ -16,7 +18,7 @@ export class ContactService {
   apiContacts = environment.APIEndpoint + "/contact";
 
 
-   getDocuments(): Observable<Array<Contact>> {
-      return this.http.get<Array<Contact>>(this.apiContacts);
+  getDocuments(): Observable<Array<Contact>> {
+    return this.http.get<Array<Contact>>(this.apiContacts);
   }
 }

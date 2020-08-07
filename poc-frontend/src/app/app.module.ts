@@ -1,22 +1,22 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './components/home/home.component';
-import { HttpClientModule } from '@angular/common/http';
-
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSelectModule } from '@angular/material/select';
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
-
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { MastheadComponent } from './components/masthead/masthead.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { ContactService } from './services/contacts/contacts.service';
+import { PersonService } from './services/persons/person.service';
 
 
 @NgModule({
@@ -31,15 +31,15 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatToolbarModule,
     MatInputModule,
     MatButtonModule,
-    MatSelectModule,
     MatTableModule,
     MatPaginatorModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ContactService, PersonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

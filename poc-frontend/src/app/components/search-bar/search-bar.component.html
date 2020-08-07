@@ -1,27 +1,30 @@
 <div class="container">
-  <form class="example-form">
-    <mat-form-field class="example-full-width">
+  <form class="d-flex flex-row pb-5">
+
+    <mat-form-field class="w-25">
+      <mat-label>Buscar por</mat-label>
+      <select matNativeControl name="searchByInput" [(ngModel)]="filter.filterBy" required>
+        <option value="name">Nome</option>
+        <option value="gender">Gênero</option>
+        <option value="mainContact">Contato Principal</option>
+        <option value="rg">RG</option>
+      </select>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="filter?.filterBy !== 'gender'" class="w-50">
       <mat-label>Buscar</mat-label>
-      <input matInput>
+      <input name="inputValue" matInput [(ngModel)]="filter.valueInput">
     </mat-form-field>
-    <mat-form-field>
-      <mat-label>Filtro</mat-label>
-      <select matNativeControl required>
-        <option value="Isto">Isto</option>
-        <option value="É">É</option>
-        <option value="Um">Um</option>
-        <option value="Filtro">Filtro</option>
+
+    <mat-form-field *ngIf="filter?.filterBy === 'gender'" class="w-50">
+      <mat-label>Gênero</mat-label>
+      <select name="inputGender" matNativeControl required [(ngModel)]="filter.genderInput">
+        <option value="Masculino">Masculino</option>
+        <option value="Feminino">Feminino</option>
       </select>
     </mat-form-field>
-    <mat-form-field>
-      <mat-label>Filtro</mat-label>
-      <select matNativeControl required>
-        <option value="Isto">Isto</option>
-        <option value="É">É</option>
-        <option value="Um">Um</option>
-        <option value="Filtro">Filtro</option>
-      </select>
-    </mat-form-field>
-    <button mat-raised-button color="primary">Buscar</button>
+
+    <button [disabled]="disabledButton()" mat-raised-button color="primary" class="col-2"
+      (click)="onSearch()">Buscar</button>
   </form>
 </div>

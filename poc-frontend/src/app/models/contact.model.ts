@@ -1,7 +1,9 @@
+import { Person } from './person.model';
+import { ContactType } from './contact-type.model';
 export interface Contact {
-    id: number;
-    idPerson: number;
-    idContactType: number;
-    isPrincipal: boolean;
-    value: string;
+  id: number;
+  person: Person;
+  contactType: ContactType;
+  isPrincipal: boolean;
+  value: string;
 }

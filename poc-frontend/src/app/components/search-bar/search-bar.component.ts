@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Filter } from './../../models/filter.model';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-search-bar',
@@ -8,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
 
+  @Input() filter: Filter;
+  @Output() searchEvent = new EventEmitter();
+
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  onSearch(): void {
+    this.searchEvent.emit(this.filter);
+  }
+
+  disabledButton(): boolean {
+    return !this.filter.genderInput && !this.filter.valueInput;
   }
 
 }
