@@ -94,16 +94,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
   
   searchPersonByFilter(event): void {
     this.personService
-      .getPersonsByFilter(this.selectedValue, this.inputValue)
+      .getPersonsByFilter(event.selectedValue, event.inputValue)
       .subscribe((data: any) => {
-        this.dataSource.data = data;
-        //this.table.renderRows();
+        this.dataSource = data;
+        this.length = data.length;
         console.log("Caiu no subscribe!", event)
       });
-  }
-
-  teste(event): void {
-    console.log("Teste funcionou!!!", event);
   }
 
 }

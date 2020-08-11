@@ -23,7 +23,7 @@
 
       <mat-form-field class="col">
         <mat-label>Gênero</mat-label>
-        <select matNativeControl required [(value)]="Gender">
+        <select name="selectGenderByInput" matInput matNativeControl required [(ngModel)]="inputValue">
           <option value="Masculino">Masculino</option>
           <option value="Feminino">Feminino</option>
         </select>

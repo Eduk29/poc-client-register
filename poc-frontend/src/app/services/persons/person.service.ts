@@ -27,9 +27,17 @@ export class PersonService {
   }
 
   getPersonsByFilter(selectedValue: string, inputValue: string): Observable<Array<Person>> {
-      const url = `${this.apiPersons}?${selectedValue}_like=${inputValue}`
-      console.log('funciona!', url)
+    console.log(selectedValue)
+    if ( selectedValue === 'name') {
+      const url = `${this.apiPersons}?${selectedValue}_like=${inputValue}`;
+      console.log('funciona!', url);
       return this.http.get<Array<Person>>(url);
+    }
+    if (selectedValue === "gender") {
+      const url = `${this.apiPersons}?${selectedValue}=${inputValue}`;
+      console.log('funciona!', url);
+      return this.http.get<Array<Person>>(url);
+    }
   }
 }
 

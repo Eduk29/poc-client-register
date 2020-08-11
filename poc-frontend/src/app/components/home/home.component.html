@@ -1,9 +1,9 @@
 <app-navbar></app-navbar>
 <app-masthead title = "Client Register POC" subtitle = "An Angular Project"></app-masthead>
-<app-search-bar [dataSource]="dataSource" [table]="table" [inputValue]="inputValue"  (searchExecute)="searchPersonByFilter($event)"></app-search-bar>
+<app-search-bar [dataSource]="dataSource" [table]="table" [inputValue]="inputValue" (searchExecute)="searchPersonByFilter($event)"></app-search-bar>
 <div class="d-flex justify-content-center" id="persons-table">
 
-    <table mat-table [dataSource]="dataSource" matSort #table="matTable" class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort #table="matTable"  class="mat-elevation-z8">
 
         <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
