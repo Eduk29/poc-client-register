@@ -6,7 +6,8 @@ import { Person } from "src/app/models/person.model";
 import { Contact } from "src/app/models/contact.model";
 import { Document } from "src/app/models/document.model";
 import { MatPaginator } from "@angular/material/paginator";
-import { MatTableDataSource } from "@angular/material/table";
+import { MatTableDataSource, MatTable } from "@angular/material/table";
+import { MatSort } from '@angular/material/sort';
 import { Person } from "src/app/models/person.model";
 
 @Component({
@@ -16,20 +17,24 @@ import { Person } from "src/app/models/person.model";
 })
 export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
-
+  @ViewChild(MatSort, null) sort: MatSort;
+  
   displayedColumns: string[] = [
-    "position",
+    "id",
     "name",
     "gender",
-    "contact",
-    "document"
+    "contacts",
+    "documents"
   ];
   dataSource: MatTableDataSource<Person>;
+  table: MatTable<Person>;
   persons: any;
   length: number;
   pageSize = 10;
   pageIndex = 1;
   pageSizeOptions: number[] = [5, 10, 15];
+  selectedValue: string;
+  inputValue: string;
 
   constructor(private personService: PersonService) {
     this.dataSource = new MatTableDataSource(this.persons);
@@ -37,10 +42,21 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
+    this.getDataLength();
+    this.inputValue = '';
   }
 
-  ngAfterViewInit() {
-    this.getDataLength();
+  ngAfterViewInit(): void {
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+  }
+
+  getDataLength(): void {
+    this.personService.getPersonsRaw().subscribe((data: Array<Person>) => {
+      this.length = data.length;
+      this.getDataPaginated();
+    });
+
   }
 
   getDataPaginated(): void {
@@ -51,12 +67,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       });
   }
 
-  getDataLength(): void {
-    this.personService.getPersonsRaw().subscribe((data: Array<Person>) => {
-      this.length = data.length;
-      this.getDataPaginated();
-    });
-  }
+  
 
   getPage(event) {
     this.pageIndex = event.pageIndex + 1;
@@ -65,7 +76,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   getNewMainContact(contacts: Array<Contact>): string {
-    const newContacts = contacts.filter(
+    const newContacts = contacts.filter( 
       contact => contact.isPrincipal === true
     );
     return newContacts[0].value;
@@ -77,4 +88,19 @@ export class HomeComponent implements OnInit, AfterViewInit {
       .shift();
     return !!newDocuments ? newDocuments.documentValue : "-";
   }
+
+  // displaySearchInput(): boolean {
+  //   return this.selectedValue === 'name' || this.selectedValue === 'mainContact' ||  this.selectedValue === 'rg';
+  // }
+  
+  searchPersonByFilter(event): void {
+    this.personService
+      .getPersonsByFilter(event.selectedValue, event.inputValue)
+      .subscribe((data: any) => {
+        this.dataSource = data;
+        this.length = data.length;
+        console.log("Caiu no subscribe!", event)
+      });
+  }
+
 }

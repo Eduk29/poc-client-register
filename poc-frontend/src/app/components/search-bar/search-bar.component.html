@@ -1,27 +1,37 @@
 <div class="container">
-  <form class="example-form">
-    <mat-form-field class="example-full-width">
-      <mat-label>Buscar</mat-label>
-      <input matInput>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Filtro</mat-label>
-      <select matNativeControl required>
-        <option value="Isto">Isto</option>
-        <option value="É">É</option>
-        <option value="Um">Um</option>
-        <option value="Filtro">Filtro</option>
+  <form class="d-flex flex-row pb-5">
+    <mat-form-field  class="w-25">
+      <mat-label>Buscar Por</mat-label>
+      <select matNativeControl name="searchByInput" [(ngModel)]="selectedValue" required>
+        <option value="name">Nome</option>
+        <option value="gender">Gênero</option>
+        <option value="mainContact">Contato Principal</option>
+        <option value="rg">RG</option>
       </select>
     </mat-form-field>
-    <mat-form-field>
-      <mat-label>Filtro</mat-label>
-      <select matNativeControl required>
-        <option value="Isto">Isto</option>
-        <option value="É">É</option>
-        <option value="Um">Um</option>
-        <option value="Filtro">Filtro</option>
-      </select>
-    </mat-form-field>
-    <button mat-raised-button color="primary">Buscar</button>
+  
+    <div *ngIf="selectedValue && displaySearchInput()" class="w-50" >
+       
+      <mat-form-field class="col">
+        <mat-label>Buscar</mat-label>
+        <input name="searchInputValue" matInput [(ngModel)]="inputValue">
+      </mat-form-field>  
+
+    </div>
+    
+    <div *ngIf="selectedValue && !displaySearchInput()" class="w-50">
+
+      <mat-form-field class="col">
+        <mat-label>Gênero</mat-label>
+        <select name="selectGenderByInput" matInput matNativeControl required [(ngModel)]="inputValue">
+          <option value="Masculino">Masculino</option>
+          <option value="Feminino">Feminino</option>
+        </select>
+      </mat-form-field>
+
+    </div>
+
+    
+    <button [disabled]="!selectedValue" mat-raised-button color="primary" class="col-2" (click)="emitSearch()">Buscar</button>
   </form>
 </div>
